@@ -1,7 +1,9 @@
 $red: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
 $text-gradient: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
 
-
+body {
+  margin: 0;
+}
 
 * {
   font-family: "Open Sans";
@@ -21,8 +23,6 @@ $text-gradient: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
   height: 70%;
   margin-left: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
 
 }
 
@@ -32,6 +32,7 @@ $text-gradient: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
   height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -92,4 +93,44 @@ $text-gradient: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
   font-size: 38px;
   font-weight: 600;
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .landing-wrapper {
+    flex-direction: column;
+    width: auto;
+    justify-content:unset;
+    padding: 10px;
+    padding-bottom: 0;
+    box-sizing: border-box
+  }
+
+  .image-container {
+    width: 100%;
+    height: 45%;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .content {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  .item_wrapper {
+    margin-bottom: 10px;
+  }
+  .header {
+    font-size: 35px;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .signup_button {
+    height: 40px;
+    font-size: 13px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .number {
+  font-size: 33px;
+  }
 }
