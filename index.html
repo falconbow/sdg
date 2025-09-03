@@ -48,8 +48,22 @@
           To register, enter the mail to which our news is sent and set your
           password
         </div>
-        <input type="text" class="form_email" placeholder="Example@email.com" />
-        <input type="text" class="form_password" placeholder="Password" />
+        <div class="form_input-wrapper">
+          <input
+            type="email"
+            class="form_email"
+            placeholder="Example@email.com"
+          />
+          <span class="email_error-icon hidden"></span>
+          <span class="email_message hidden">Please enter a valid e-mail</span>
+        </div>
+        <div class="form_input-wrapper">
+          <input type="password" class="form_password" placeholder="Password" />
+          <span class="password_error-icon hidden"></span>
+          <span class="password_message hidden">
+            Password should be at least 8 characters long
+          </span>
+        </div>
         <button class="form_submit">SUBMIT</button>
       </div>
     </div>
