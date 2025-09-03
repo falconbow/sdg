@@ -69,7 +69,7 @@
   background: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
   width: 50%;
   height: 50px;
-  letter-spacing: 20%;
+  letter-spacing: 5px;
 }
 
 .hidden {
