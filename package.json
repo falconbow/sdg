@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "terser": "^5.44.0"
+  },
+  "scripts": {
+    "minify": "terser ./scripts/index.js -o ./scripts/index.min.js --compress --mangle"
+  }
+}
