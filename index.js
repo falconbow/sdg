@@ -1,5 +1,7 @@
 const popupElement = document.querySelector(".popup_wrapper");
 const landingWrapper = document.querySelector(".landing_wrapper");
+const formWrapper = document.querySelector(".form_wrapper");
+const successWrapper = document.querySelector(".success_wrapper");
 const cross = document.querySelector(".cross");
 const email = document.querySelector(".form_email");
 const password = document.querySelector(".form_password");
@@ -10,31 +12,44 @@ const passwordErrIcon = document.querySelector(".password_error-icon");
 
 const url = "https://api.dating.com/identity";
 
-const showPopup = () => {
+const showPopup = async () => {
   landingWrapper.classList.add("blurred");
-  popupElement.classList.remove("hidden");
+  popupElement.classList.remove("no-show");
+  // const response = await fetch(url);
+  // console.log(response);
 };
 
 const closePopup = () => {
   landingWrapper.classList.remove("blurred");
-  popupElement.classList.add("hidden");
+  popupElement.classList.add("no-show");
+  clearSuccessState();
 };
 
 const isPopupClosed = () => {
-  return popupElement.classList.contains("hidden");
+  return popupElement.classList.contains("no-show");
 };
 
 const setInputError = (field) => {
   if (field === "email") {
     email.classList.add("form_email-error");
-    emailErrIcon.classList.remove("hidden");
-    emailMessage.classList.remove("hidden");
+    emailErrIcon.classList.remove("no-show");
+    emailMessage.classList.remove("no-show");
   }
   if (field === "password") {
     password.classList.add("form_password-error");
-    passwordErrIcon.classList.remove("hidden");
-    passwordMessage.classList.remove("hidden");
+    passwordErrIcon.classList.remove("no-show");
+    passwordMessage.classList.remove("no-show");
   }
+};
+
+const displaySuccessWindow = () => {
+  formWrapper.classList.add("hidden");
+  successWrapper.classList.remove("hidden");
+};
+
+const clearSuccessState = () => {
+  successWrapper.classList.add("hidden");
+  formWrapper.classList.remove("hidden");
 };
 
 const areFormsValid = () => {
@@ -70,6 +85,8 @@ document.addEventListener("click", async (event) => {
             password: password.value,
           }),
         });
+        console.log(response);
+        // displaySuccessWindow();
       } catch (e) {
         console.log(e);
       }
