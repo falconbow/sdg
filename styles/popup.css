@@ -43,7 +43,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  margin-bottom: 30px;
 }
 .form_email, .form_password {
   border: 0;

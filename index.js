@@ -15,14 +15,16 @@ const url = "https://api.dating.com/identity";
 const showPopup = async () => {
   landingWrapper.classList.add("blurred");
   popupElement.classList.remove("no-show");
-  // const response = await fetch(url);
-  // console.log(response);
 };
 
 const closePopup = () => {
   landingWrapper.classList.remove("blurred");
   popupElement.classList.add("no-show");
   clearSuccessState();
+};
+
+const redirectUserToDatingPage = (id) => {
+  window.location = `https://www.dating.com/people/#token=${sessionID}`;
 };
 
 const isPopupClosed = () => {
@@ -50,6 +52,8 @@ const displaySuccessWindow = () => {
 const clearSuccessState = () => {
   successWrapper.classList.add("hidden");
   formWrapper.classList.remove("hidden");
+  email.value = "";
+  password.value = "";
 };
 
 const areFormsValid = () => {
@@ -58,8 +62,18 @@ const areFormsValid = () => {
   }
 };
 
+const getSessionID = () => {
+  return Object.fromEntries(
+    document.cookie.split("; ").map((cookie) => cookie.split("="))
+  )["SESSION_ID"];
+};
+
 document.addEventListener("click", async (event) => {
+  const sessionID = getSessionID();
   if (event.target.classList.contains("signup_button")) {
+    if (sessionID) {
+      redirectUserToDatingPage(sessionID);
+    }
     showPopup();
   }
   if (event.target.classList.contains("cross")) {
@@ -85,8 +99,15 @@ document.addEventListener("click", async (event) => {
             password: password.value,
           }),
         });
-        console.log(response);
-        // displaySuccessWindow();
+
+        const userID = response.headers.get("X-Token");
+        if (userID) {
+          document.cookie = `SESSION_ID = ${userID}`;
+          displaySuccessWindow();
+          setTimeout(() => {
+            redirectUserToDatingPage(sessionID);
+          }, 10000);
+        }
       } catch (e) {
         console.log(e);
       }
