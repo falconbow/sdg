@@ -1,0 +1,92 @@
+$red: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
+$gray:  #3A3A3A;
+
+
+
+.popup_wrapper {
+  background: white;
+  height: 60vh;
+  width: 60vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #0000001A;
+;
+}
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
+.cross {
+  background-image: url("../assets/cross.svg");
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+.cross:hover {
+  cursor: pointer;
+}
+
+.form {
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    padding: 20px;
+  }
+  &_email, &_password {
+    border: 0;
+    border-bottom: 0.5px solid #3A3A3A;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &_email::placeholder, &_password::placeholder { 
+    text-align: center;
+  }
+
+  &_title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  &_submit {
+    border: 0;
+    background: $red;
+    width: 50%;
+    height: 50px;
+    letter-spacing: 20%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .popup_wrapper {
+    width: 90vw;
+  }
+
+  .form {
+    &_wrapper {
+      width: 100%;
+    }
+    &_title {
+      font-size: 17px;
+    }
+    &_submit {
+      font-size: 12px;
+    }
+  }
+}
