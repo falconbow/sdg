@@ -70,7 +70,7 @@ const getSessionID = () => {
 
 document.addEventListener("click", async (event) => {
   const sessionID = getSessionID();
-  if (event.target.classList.contains("signup_button")) {
+  if (event.target.classList.contains("landing_item-wrapper_signup-button")) {
     if (sessionID) {
       redirectUserToDatingPage(sessionID);
     }
