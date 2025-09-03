@@ -1,7 +1,7 @@
 button {
   color: white;
   border: none;
-  background: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
+  background: linear-gradient(238.08deg, #d4208c 0.42%, #e61726 82.5%);
   border-radius: 4px;
   font-weight: 800;
   font-size: 23px;
@@ -31,15 +31,13 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
-.image-container {
+.landing_image-container {
   width: 40%;
   height: 70%;
   margin-left: 20px;
   display: flex;
 }
-
-.image {
+.landing_image {
   background-image: url("../assets/image.png");
   width: 100%;
   height: 100%;
@@ -47,17 +45,15 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.content {
+.landing_content {
   display: flex;
   flex-direction: column;
   max-width: 40%;
   justify-content: center;
   align-items: start;
 }
-
-.header {
-  background: linear-gradient(145.08deg, #E61726 12.35%, #D4208C 83.63%);
+.landing_content-header {
+  background: linear-gradient(145.08deg, #e61726 12.35%, #d4208c 83.63%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -67,8 +63,7 @@ body {
   margin-bottom: 30px;
   line-height: 110%;
 }
-
-.item_wrapper {
+.landing_item-wrapper {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -76,9 +71,8 @@ body {
   margin-bottom: 20px;
   flex: 0 1 auto;
 }
-
-.number {
-  background: linear-gradient(238.08deg, #D4208C 0.42%, #E61726 82.5%);
+.landing_item-wrapper_number {
+  background: linear-gradient(238.08deg, #d4208c 0.42%, #e61726 82.5%);
   margin-right: 10px;
   -webkit-background-clip: text;
           background-clip: text;
@@ -86,16 +80,14 @@ body {
   font-size: 45px;
   font-weight: 800;
 }
-
-.signup_button {
-  flex-grow: 1;
-  font-family: "Open Sans";
-}
-
-.text {
+.landing_item-wrapper_text {
   font-size: 38px;
   font-weight: 600;
   width: 100%;
+}
+.landing_item-wrapper_signup-button {
+  flex-grow: 1;
+  font-family: "Open Sans";
 }
 
 @media screen and (max-width: 900px) {
@@ -107,32 +99,32 @@ body {
     padding-bottom: 0;
     box-sizing: border-box;
   }
-  .image-container {
+  .landing_image-container {
     width: 100%;
     height: 45%;
     margin: 0;
     margin-top: 10px;
   }
-  .content {
+  .landing_content {
     max-width: 100%;
     margin-top: 10px;
   }
-  .item_wrapper {
-    margin-bottom: 10px;
-  }
-  .header {
+  .landing_content-header {
     font-size: 35px;
     width: 80%;
     margin-bottom: 20px;
   }
-  .signup_button {
-    height: 40px;
-    font-size: 13px;
+  .landing_item_wrapper {
+    margin-bottom: 10px;
   }
-  .text {
+  .landing_item_wrapper_number {
+    font-size: 33px;
+  }
+  .landing_item_wrapper_text {
     font-size: 18px;
   }
-  .number {
-    font-size: 33px;
+  .landing_item_wrapper_signup_button {
+    height: 40px;
+    font-size: 13px;
   }
 }/*# sourceMappingURL=index.css.map */
