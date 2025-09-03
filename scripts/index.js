@@ -106,7 +106,7 @@ document.addEventListener("click", async (event) => {
           displaySuccessWindow();
           setTimeout(() => {
             redirectUserToDatingPage(sessionID);
-          }, 10000);
+          }, 5000);
         }
       } catch (e) {
         console.log(e);
