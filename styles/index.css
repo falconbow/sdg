@@ -114,16 +114,16 @@ body {
     width: 80%;
     margin-bottom: 20px;
   }
-  .landing_item_wrapper {
+  .landing_item-wrapper {
     margin-bottom: 10px;
   }
-  .landing_item_wrapper_number {
+  .landing_item-wrapper_number {
     font-size: 33px;
   }
-  .landing_item_wrapper_text {
+  .landing_item-wrapper_text {
     font-size: 18px;
   }
-  .landing_item_wrapper_signup_button {
+  .landing_item-wrapper_signup-button {
     height: 40px;
     font-size: 13px;
   }

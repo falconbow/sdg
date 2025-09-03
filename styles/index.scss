@@ -104,7 +104,6 @@ body {
       padding-bottom: 0;
       box-sizing: border-box;
     }
-
     &_image-container {
       width: 100%;
       height: 45%;
@@ -120,7 +119,7 @@ body {
         margin-bottom: 20px;
       }
     }
-    &_item_wrapper {
+    &_item-wrapper {
       margin-bottom: 10px;
       &_number {
         font-size: 33px;
@@ -128,7 +127,7 @@ body {
       &_text {
         font-size: 18px;
       }
-      &_signup_button {
+      &_signup-button {
         height: 40px;
         font-size: 13px;
       }
